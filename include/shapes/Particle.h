@@ -30,6 +30,6 @@ public:
     void updateConfig();
     void update(const sf::RenderWindow& renderWindow, 
                 const std::array<std::array<std::unique_ptr<Particle>, countSize>, countSize>& particles,
-                const std::array<std::array<std::unique_ptr<Particle>, countSize>, countSize>& particleBufffers);
+                const std::array<std::array<std::unique_ptr<Particle>, countSize>, countSize>& particleBuffers);
     void draw(sf::RenderWindow& renderWindow);
 };

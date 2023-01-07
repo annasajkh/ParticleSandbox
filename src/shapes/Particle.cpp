@@ -38,7 +38,7 @@ void Particle::updateConfig()
 
 void Particle::update(const sf::RenderWindow& renderWindow,
                       const std::array<std::array<std::unique_ptr<Particle>, countSize>, countSize>& particles,
-                      const std::array<std::array<std::unique_ptr<Particle>, countSize>, countSize>& particleBufffers)
+                      const std::array<std::array<std::unique_ptr<Particle>, countSize>, countSize>& particleBuffers)
 {
 
 
@@ -50,79 +50,79 @@ void Particle::update(const sf::RenderWindow& renderWindow,
                 break;
             
             case TYPE_SAND:
-                if(particleBufffers[i][j + 1]->particleType == TYPE_WATER)
+                if(particleBuffers[i][j + 1]->particleType == TYPE_WATER)
                 {   
-                    Type temp = particleBufffers[i][j + 1]->particleType;
+                    Type temp = particleBuffers[i][j + 1]->particleType;
 
-                    particleBufffers[i][j + 1]->particleType = particleBufffers[i][j]->particleType;
-                    particleBufffers[i][j]->particleType = temp;
+                    particleBuffers[i][j + 1]->particleType = particleBuffers[i][j]->particleType;
+                    particleBuffers[i][j]->particleType = temp;
                     
                 }
 
-                if(particleBufffers[i][j + 1]->particleType == TYPE_NONE)
+                if(particleBuffers[i][j + 1]->particleType == TYPE_NONE)
                 {
-                    particleBufffers[i][j + 1]->particleType = this->particleType;
-                    particleBufffers[i][j]->particleType = TYPE_NONE;
+                    particleBuffers[i][j + 1]->particleType = this->particleType;
+                    particleBuffers[i][j]->particleType = TYPE_NONE;
                 }
-                else if(particleBufffers[i + 1][j + 1]->particleType == TYPE_NONE &&
-                        particleBufffers[i - 1][j + 1]->particleType == TYPE_NONE &&
-                        particleBufffers[i - 1][j]->particleType == TYPE_NONE &&
-                        particleBufffers[i - 1][j]->particleType == TYPE_NONE)
+                else if(particleBuffers[i + 1][j + 1]->particleType == TYPE_NONE &&
+                        particleBuffers[i - 1][j + 1]->particleType == TYPE_NONE &&
+                        particleBuffers[i - 1][j]->particleType == TYPE_NONE &&
+                        particleBuffers[i - 1][j]->particleType == TYPE_NONE)
                 {
                     if(rand() % 2)
                     {
-                        particleBufffers[i + 1][j + 1]->particleType = this->particleType;
-                        particleBufffers[i][j]->particleType = TYPE_NONE;
+                        particleBuffers[i + 1][j + 1]->particleType = this->particleType;
+                        particleBuffers[i][j]->particleType = TYPE_NONE;
                     }
                     else
                     {
-                        particleBufffers[i - 1][j + 1]->particleType = this->particleType;
-                        particleBufffers[i][j]->particleType = TYPE_NONE;
+                        particleBuffers[i - 1][j + 1]->particleType = this->particleType;
+                        particleBuffers[i][j]->particleType = TYPE_NONE;
                     }
                 }
-                else if(particleBufffers[i + 1][j + 1]->particleType == TYPE_NONE &&
-                        particleBufffers[i + 1][j]->particleType == TYPE_NONE)
+                else if(particleBuffers[i + 1][j + 1]->particleType == TYPE_NONE &&
+                        particleBuffers[i + 1][j]->particleType == TYPE_NONE)
                 {
-                    particleBufffers[i + 1][j + 1]->particleType = this->particleType;
-                    particleBufffers[i][j]->particleType = TYPE_NONE;
+                    particleBuffers[i + 1][j + 1]->particleType = this->particleType;
+                    particleBuffers[i][j]->particleType = TYPE_NONE;
                 }
-                else if(particleBufffers[i - 1][j + 1]->particleType == TYPE_NONE &&
-                        particleBufffers[i - 1][j]->particleType == TYPE_NONE)
+                else if(particleBuffers[i - 1][j + 1]->particleType == TYPE_NONE &&
+                        particleBuffers[i - 1][j]->particleType == TYPE_NONE)
                 {
-                    particleBufffers[i - 1][j + 1]->particleType = this->particleType;
-                    particleBufffers[i][j]->particleType = TYPE_NONE;
+                    particleBuffers[i - 1][j + 1]->particleType = this->particleType;
+                    particleBuffers[i][j]->particleType = TYPE_NONE;
                 }
                 break;
 
             case TYPE_WATER:
-                if(particleBufffers[i][j + 1]->particleType == TYPE_NONE)
+                if(particleBuffers[i][j + 1]->particleType == TYPE_NONE)
                 {
-                    particleBufffers[i][j + 1]->particleType = this->particleType;
-                    particleBufffers[i][j]->particleType = TYPE_NONE;
+                    particleBuffers[i][j + 1]->particleType = this->particleType;
+                    particleBuffers[i][j]->particleType = TYPE_NONE;
                 }
-                else if(particleBufffers[i + 1][j]->particleType == TYPE_NONE &&
-                        particleBufffers[i - 1][j]->particleType == TYPE_NONE)
+                else if(particleBuffers[i + 1][j]->particleType == TYPE_NONE &&
+                        particleBuffers[i - 1][j]->particleType == TYPE_NONE)
                 {
                     if(rand() % 2)
                     {
-                        particleBufffers[i + 1][j]->particleType = this->particleType;
-                        particleBufffers[i][j]->particleType = TYPE_NONE;
+                        particleBuffers[i + 1][j]->particleType = this->particleType;
+                        particleBuffers[i][j]->particleType = TYPE_NONE;
                     }
                     else
                     {
-                        particleBufffers[i - 1][j]->particleType = this->particleType;
-                        particleBufffers[i][j]->particleType = TYPE_NONE;
+                        particleBuffers[i - 1][j]->particleType = this->particleType;
+                        particleBuffers[i][j]->particleType = TYPE_NONE;
                     }
                 }
-                else if(particleBufffers[i + 1][j]->particleType == TYPE_NONE)
+                else if(particleBuffers[i + 1][j]->particleType == TYPE_NONE)
                 {
-                    particleBufffers[i + 1][j]->particleType = this->particleType;
-                    particleBufffers[i][j]->particleType = TYPE_NONE;
+                    particleBuffers[i + 1][j]->particleType = this->particleType;
+                    particleBuffers[i][j]->particleType = TYPE_NONE;
                 }
-                else if(particleBufffers[i - 1][j]->particleType == TYPE_NONE)
+                else if(particleBuffers[i - 1][j]->particleType == TYPE_NONE)
                 {
-                    particleBufffers[i - 1][j]->particleType = this->particleType;
-                    particleBufffers[i][j]->particleType = TYPE_NONE;
+                    particleBuffers[i - 1][j]->particleType = this->particleType;
+                    particleBuffers[i][j]->particleType = TYPE_NONE;
                 }
                 break;
 

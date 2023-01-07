@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/shapes/Particle.h
+SFML/Graphics.hpp
+-
+utils/Constants.h
+-
+
+../include/utils/Constants.h
+iostream
+-
+
+/home/annas/Documents/C++/ParticleSandbox/src/main.cpp
+iostream
+-
+SFML/Graphics.hpp
+-
+shapes/Particle.h
+-
+utils/Constants.h
+-
+
+/home/annas/Documents/C++/ParticleSandbox/src/shapes/Particle.cpp
+shapes/Particle.h
+-
+iostream
+-
+utils/Constants.h
+-
+
+/home/annas/Documents/C++/ParticleSandbox/src/utils/Global.cpp
+SFML/Graphics.hpp
+-
+shapes/Particle.h
+-
+
