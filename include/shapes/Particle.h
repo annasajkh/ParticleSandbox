@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <utils/Constants.h>
-
+#include <memory>
+#include <array>
 
 class Particle
 {

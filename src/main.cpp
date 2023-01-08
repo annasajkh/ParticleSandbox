@@ -2,7 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include <shapes/Particle.h>
 #include <utils/Constants.h>
-
+#include <memory>
+#include <array>
 
 
 extern sf::Vector2i mousePosition;
