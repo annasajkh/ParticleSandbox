@@ -2,7 +2,7 @@
 powder toy and noita like sand simulation written in c++ and sfml
 
 # Compiling on linux
-make sure you have sfml installed, if you haven't you can install it by
+make sure you have sfml and cmake installed, if you haven't you can install it by
 ```
 sudo apt-get install libsfml-dev
 ````
