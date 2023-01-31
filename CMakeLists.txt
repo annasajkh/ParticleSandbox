@@ -1,3 +1,6 @@
+# base on https://marketplace.visualstudio.com/items?itemName=ChenPerach.c-cpp-cmake-project-creator
+
+
 cmake_minimum_required(VERSION 3.10)
 
 set(PROJECT_N ParticleSandbox)
